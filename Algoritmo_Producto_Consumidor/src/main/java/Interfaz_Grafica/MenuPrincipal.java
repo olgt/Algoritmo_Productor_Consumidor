@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaz_Grafica;
+import Clases_Sistema.*;
 
 /**
  *
@@ -72,6 +73,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jButton_Condumidor2_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 100, 30));
 
         jButton_Productor1_Iniciar.setText("Iniciar");
+        jButton_Productor1_Iniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Productor1_IniciarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Productor1_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 100, 30));
 
         jTextArea_Buffer.setColumns(20);
@@ -107,6 +113,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton_Productor1_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor1_IniciarActionPerformed
+        System.out.println("Aqui ha empezado");
+        test();
+    }//GEN-LAST:event_jButton_Productor1_IniciarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -140,6 +151,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 new MenuPrincipal().setVisible(true);
             }
         });
+    }
+
+    public void test() {
+
+        Buffer b = new Buffer(10);
+        Productor p = new Productor(b, 1);
+        Consumidor c = new Consumidor(b, 1);
+        Productor c1 = new Productor(b, 2);
+        Productor c2 = new Productor(b, 2);
+
+        p.start();
+        c.start();
+        c1.start();
+        c2.start();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
