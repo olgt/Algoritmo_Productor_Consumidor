@@ -15,6 +15,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,18 +27,28 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButton_ConsumidorIniciar = new javax.swing.JButton();
+        jButton_ProductorIniciar1 = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton_ConsumidorIniciar.setBackground(new java.awt.Color(0, 0, 51));
+        jButton_ConsumidorIniciar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton_ConsumidorIniciar.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_ConsumidorIniciar.setText("Iniciar");
+        getContentPane().add(jButton_ConsumidorIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, 30));
+
+        jButton_ProductorIniciar1.setBackground(new java.awt.Color(0, 0, 51));
+        jButton_ProductorIniciar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton_ProductorIniciar1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_ProductorIniciar1.setText("Iniciar");
+        getContentPane().add(jButton_ProductorIniciar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 80, 30));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo b.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 0, 727, 489));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +89,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton_ConsumidorIniciar;
+    private javax.swing.JButton jButton_ProductorIniciar1;
+    private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
 }
