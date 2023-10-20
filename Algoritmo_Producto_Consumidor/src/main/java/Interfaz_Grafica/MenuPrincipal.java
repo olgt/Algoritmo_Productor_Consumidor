@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaz_Grafica;
+
 import Clases_Sistema.*;
 
 /**
@@ -10,6 +11,12 @@ import Clases_Sistema.*;
  * @author zaidi
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+
+    Buffer b = new Buffer(10);
+    Productor p = new Productor(b, 1, true);
+    Consumidor c = new Consumidor(b, 1, true);
+    Productor c1 = new Productor(b, 2, true);
+    Productor c2 = new Productor(b, 2, true);
 
     /**
      * Creates new form MenuPrincipal
@@ -114,7 +121,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_Productor1_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor1_IniciarActionPerformed
-        System.out.println("Aqui ha empezado");
         test();
     }//GEN-LAST:event_jButton_Productor1_IniciarActionPerformed
 
@@ -155,11 +161,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     public void test() {
 
-        Buffer b = new Buffer(10);
-        Productor p = new Productor(b, 1);
-        Consumidor c = new Consumidor(b, 1);
-        Productor c1 = new Productor(b, 2);
-        Productor c2 = new Productor(b, 2);
+        boolean continuarProductor1;
+        boolean continuarProductor2;
+        boolean continuarConsumidor1;
+        boolean continuarConsumidor2;
 
         p.start();
         c.start();

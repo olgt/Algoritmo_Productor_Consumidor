@@ -16,14 +16,16 @@ public class Productor extends Thread {
     private Buffer buffer;
     private final String Letras = "abcdefghijklmnopqrstuvwxyz";
     private int numeroProductor;
+    private boolean continuar;
 
-    public Productor(Buffer b, int numeroProductor) {
+    public Productor(Buffer b, int numeroProductor, boolean continuar) {
         this.buffer = b;
         this.numeroProductor = numeroProductor;
+        this.continuar = continuar;
     }
 
     public void run() {
-        while (true) {
+        while (continuar == true) {
             char c = Letras.charAt((int) (Math.random() * Letras.length()));
             buffer.producir(c);
             System.out.println("Productor " + numeroProductor + " Depositado exitosamente el caracter " + c + " del buffer");
@@ -35,5 +37,9 @@ public class Productor extends Thread {
             }
         }
 
+    }
+    
+    public void setContinuar(boolean continuarStatus){
+        this.continuar = continuarStatus;
     }
 }
