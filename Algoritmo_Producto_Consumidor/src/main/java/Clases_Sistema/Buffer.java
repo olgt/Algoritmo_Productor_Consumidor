@@ -7,8 +7,7 @@ package Clases_Sistema;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
+/*
  * @author olgt1
  */
 public class Buffer {
