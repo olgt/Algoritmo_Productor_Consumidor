@@ -15,6 +15,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,18 +27,82 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButton_Condumidor1_Detener = new javax.swing.JButton();
+        jButton_Productor1_Detener = new javax.swing.JButton();
+        jButton_Productor2_Iniciar = new javax.swing.JButton();
+        jButton_Condumidor1_Iniciar = new javax.swing.JButton();
+        jButton_Productor2_Detener = new javax.swing.JButton();
+        jButton_Condumidor2_Iniciar = new javax.swing.JButton();
+        jButton_Condumidor2_Detener = new javax.swing.JButton();
+        jButton_Productor1_Iniciar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea_Buffer = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea_Consola = new javax.swing.JTextArea();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(700, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton_Condumidor1_Detener.setText("Detener");
+        getContentPane().add(jButton_Condumidor1_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 100, 30));
+
+        jButton_Productor1_Detener.setText("Detener");
+        getContentPane().add(jButton_Productor1_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 100, 30));
+
+        jButton_Productor2_Iniciar.setText("Iniciar");
+        getContentPane().add(jButton_Productor2_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 100, 30));
+
+        jButton_Condumidor1_Iniciar.setText("Iniciar");
+        getContentPane().add(jButton_Condumidor1_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 100, 30));
+
+        jButton_Productor2_Detener.setText("Detener");
+        getContentPane().add(jButton_Productor2_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 100, 30));
+
+        jButton_Condumidor2_Iniciar.setText("Iniciar");
+        getContentPane().add(jButton_Condumidor2_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 100, 30));
+
+        jButton_Condumidor2_Detener.setText("Detener");
+        getContentPane().add(jButton_Condumidor2_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 100, 30));
+
+        jButton_Productor1_Iniciar.setText("Iniciar");
+        getContentPane().add(jButton_Productor1_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 100, 30));
+
+        jTextArea_Buffer.setColumns(20);
+        jTextArea_Buffer.setRows(5);
+        jScrollPane1.setViewportView(jTextArea_Buffer);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+
+        jLabel1.setText("Productor 1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+
+        jLabel2.setText("Consumidor 1");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, -1, -1));
+
+        jLabel3.setText("Productor 2");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+
+        jLabel4.setText("Consumidor 2");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, -1, -1));
+
+        jLabel5.setText("Buffer");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, -1));
+
+        jLabel6.setText("Consola");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, -1, -1));
+
+        jTextArea_Consola.setColumns(20);
+        jTextArea_Consola.setRows(5);
+        jScrollPane2.setViewportView(jTextArea_Consola);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, 120));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +143,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton_Condumidor1_Detener;
+    private javax.swing.JButton jButton_Condumidor1_Iniciar;
+    private javax.swing.JButton jButton_Condumidor2_Detener;
+    private javax.swing.JButton jButton_Condumidor2_Iniciar;
+    private javax.swing.JButton jButton_Productor1_Detener;
+    private javax.swing.JButton jButton_Productor1_Iniciar;
+    private javax.swing.JButton jButton_Productor2_Detener;
+    private javax.swing.JButton jButton_Productor2_Iniciar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea_Buffer;
+    private javax.swing.JTextArea jTextArea_Consola;
     // End of variables declaration//GEN-END:variables
 }
