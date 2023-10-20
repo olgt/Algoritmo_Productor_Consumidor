@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaz_Grafica;
+
 import Clases_Sistema.*;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -11,12 +13,30 @@ import Clases_Sistema.*;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    Buffer b = new Buffer(10);
+    Productor p1 = new Productor(b, 1, true);
+    Consumidor c = new Consumidor(b, 1, true);
+    Productor p2 = new Productor(b, 2, true);
+    Productor p3 = new Productor(b, 2, true);
+    JTextArea something = new JTextArea();
+
+    boolean continuarProductor1;
+    boolean continuarProductor2;
+    boolean continuarConsumidor1;
+    boolean continuarConsumidor2;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        c.setTextArea(jTextArea_Consola);
+        p1.setTextArea(jTextArea_Consola);
+        p2.setTextArea(jTextArea_Consola);
+        p3.setTextArea(jTextArea_Consola);
+
     }
 
     /**
@@ -48,14 +68,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jTextArea_Consola = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(600, 480));
-        setPreferredSize(new java.awt.Dimension(600, 480));
+
+        setMinimumSize(new java.awt.Dimension(700, 600));
+        setPreferredSize(new java.awt.Dimension(900, 500));
+
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_Condumidor1_Detener.setBackground(new java.awt.Color(255, 153, 153));
         jButton_Condumidor1_Detener.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Condumidor1_Detener.setText("Detener");
-        getContentPane().add(jButton_Condumidor1_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 100, 30));
+        getContentPane().add(jButton_Condumidor1_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, 100, 30));
 
         jButton_Productor1_Detener.setBackground(new java.awt.Color(255, 153, 153));
         jButton_Productor1_Detener.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -70,7 +92,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButton_Condumidor1_Iniciar.setBackground(new java.awt.Color(153, 255, 153));
         jButton_Condumidor1_Iniciar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Condumidor1_Iniciar.setText("Iniciar");
-        getContentPane().add(jButton_Condumidor1_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 100, 30));
+        getContentPane().add(jButton_Condumidor1_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 70, 100, 30));
 
         jButton_Productor2_Detener.setBackground(new java.awt.Color(255, 153, 153));
         jButton_Productor2_Detener.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -80,12 +102,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButton_Condumidor2_Iniciar.setBackground(new java.awt.Color(153, 255, 153));
         jButton_Condumidor2_Iniciar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Condumidor2_Iniciar.setText("Iniciar");
-        getContentPane().add(jButton_Condumidor2_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 100, 30));
+        getContentPane().add(jButton_Condumidor2_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 100, 30));
 
         jButton_Condumidor2_Detener.setBackground(new java.awt.Color(255, 153, 153));
         jButton_Condumidor2_Detener.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Condumidor2_Detener.setText("Detener");
-        getContentPane().add(jButton_Condumidor2_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 100, 30));
+        getContentPane().add(jButton_Condumidor2_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 100, 30));
 
         jButton_Productor1_Iniciar.setBackground(new java.awt.Color(153, 255, 153));
         jButton_Productor1_Iniciar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -102,7 +124,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jTextArea_Buffer.setRows(5);
         jScrollPane1.setViewportView(jTextArea_Buffer);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 270, -1));
+
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Productor 1");
@@ -110,7 +134,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Consumidor 1");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, -1, -1));
+
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, -1, -1));
+
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Productor 2");
@@ -118,29 +144,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Consumidor 2");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, -1, -1));
+
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 310, -1, -1));
+
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Buffer");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 40, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Consola");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
+
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 50, -1));
+
 
         jTextArea_Consola.setBackground(new java.awt.Color(204, 204, 255));
         jTextArea_Consola.setColumns(20);
         jTextArea_Consola.setRows(5);
         jScrollPane2.setViewportView(jTextArea_Consola);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, 120));
+
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 490, 160));
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_Productor1_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor1_IniciarActionPerformed
-        System.out.println("Aqui ha empezado");
         test();
+
     }//GEN-LAST:event_jButton_Productor1_IniciarActionPerformed
 
     /**
@@ -179,17 +212,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     public void test() {
-
-        Buffer b = new Buffer(10);
-        Productor p = new Productor(b, 1);
-        Consumidor c = new Consumidor(b, 1);
-        Productor c1 = new Productor(b, 2);
-        Productor c2 = new Productor(b, 2);
-
-        p.start();
+        p1.start();
         c.start();
-        c1.start();
-        c2.start();
+        p2.start();
+        p3.start();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
