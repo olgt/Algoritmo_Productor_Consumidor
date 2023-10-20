@@ -15,16 +15,18 @@ import java.util.logging.Logger;
 public class Consumidor extends Thread {
 
     private Buffer buffer;
+    private int numeroConsumidor;
 
-    public Consumidor(Buffer b) {
+    public Consumidor(Buffer b, int numeroConsumidor) {
         this.buffer = b;
+        this.numeroConsumidor = numeroConsumidor;
     }
 
     public void run() {
         while (true) {
             try {
                 char c = this.buffer.consumir();
-                System.out.println("Recogido el caracter: " + c + " del buffer");
+                System.out.println("Consumidor " + numeroConsumidor + " Recogido el caracter: " + c + " del buffer");
             
                 sleep((int) (Math.random() * 4000));
             } catch(InterruptedException ex){
