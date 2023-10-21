@@ -34,6 +34,7 @@ public class Buffer {
         }
         
         siguiente--;
+        
         this.estaLlena = false;
         if(siguiente ==0){
             this.estaVacia = true;
