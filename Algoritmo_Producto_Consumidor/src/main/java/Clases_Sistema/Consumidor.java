@@ -41,6 +41,11 @@ public class Consumidor extends Thread {
         }
     }
 
+    public void setContinuar(boolean continuarStatus ){
+        this.continuar = continuarStatus;
+    }
+    
+    
     public void setTextArea(JTextArea textArea) {
         this.textAreaConsola = textArea;
     }
