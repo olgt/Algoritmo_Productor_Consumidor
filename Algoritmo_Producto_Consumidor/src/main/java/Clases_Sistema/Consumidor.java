@@ -19,21 +19,24 @@ public class Consumidor extends Thread {
     private int numeroConsumidor;
     private boolean continuar;
     JTextArea textAreaConsola;
+    JTextArea textAreaBuffer;
 
-    public Consumidor(Buffer b, int numeroConsumidor, boolean continar) {
+    public Consumidor(Buffer b, int numeroConsumidor, boolean continuar) {
         this.buffer = b;
         this.numeroConsumidor = numeroConsumidor;
         this.continuar = continuar;
     }
 
     public void run() {
-        while (true) {
+        while (continuar == true) {
+
+            char c = this.buffer.consumir();
+            System.out.println("Consumidor " + numeroConsumidor + " Recogido el caracter: " + c + " del buffer");
+            this.textAreaConsola.setText(this.textAreaConsola.getText()
+                    + "\n"
+                    + "Consumidor " + numeroConsumidor + " Recogido el caracter: " + c + " del buffer");
+            this.textAreaBuffer.setText(this.buffer.getBuffer());
             try {
-                char c = this.buffer.consumir();
-                System.out.println("Consumidor " + numeroConsumidor + " Recogido el caracter: " + c + " del buffer");
-                this.textAreaConsola.setText(this.textAreaConsola.getText()
-                        + "\n"
-                        + "Consumidor " + numeroConsumidor + " Recogido el caracter: " + c + " del buffer");
                 sleep((int) (Math.random() * 4000));
             } catch (InterruptedException ex) {
                 Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,13 +44,16 @@ public class Consumidor extends Thread {
         }
     }
 
-    public void setContinuar(boolean continuarStatus ){
+    public void setContinuar(boolean continuarStatus) {
         this.continuar = continuarStatus;
     }
-    
-    
-    public void setTextArea(JTextArea textArea) {
+
+    public void setTextAreaConsola(JTextArea textArea) {
         this.textAreaConsola = textArea;
+    }
+
+    public void setTextAreaBuffer(JTextArea textArea) {
+        this.textAreaBuffer = textArea;
     }
 
 }
