@@ -14,16 +14,16 @@ import javax.swing.JTextArea;
 public class MenuPrincipal extends javax.swing.JFrame {
 
     Buffer b = new Buffer(10);
-    Productor p1 = new Productor(b, 1, true);
-    Consumidor c1 = new Consumidor(b, 1, true);
-    Productor p2 = new Productor(b, 2, true);
-    Consumidor c2 = new Consumidor(b, 2, true);
-    JTextArea something = new JTextArea();
 
-    boolean continuarProductor1;
-    boolean continuarProductor2;
-    boolean continuarConsumidor1;
-    boolean continuarConsumidor2;
+    Productor productorActual1;
+    Productor productorActual2;
+    Consumidor consumidorActual1;
+    Consumidor consumidorActual2;
+    
+    boolean continuarProductor1 = false;
+    boolean continuarProductor2 = false;
+    boolean continuarConsumidor1 = false;
+    boolean continuarConsumidor2 = false;
 
     /**
      * Creates new form MenuPrincipal
@@ -31,12 +31,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-
-        p1.setTextArea(jTextArea_Consola);
-        c1.setTextArea(jTextArea_Consola);
-        p2.setTextArea(jTextArea_Consola);
-        c2.setTextArea(jTextArea_Consola);
-
+       
     }
 
     /**
@@ -136,6 +131,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButton_Condumidor2_Detener.setBackground(new java.awt.Color(255, 153, 153));
         jButton_Condumidor2_Detener.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Condumidor2_Detener.setText("Detener");
+        jButton_Condumidor2_Detener.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Condumidor2_DetenerActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Condumidor2_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 100, 30));
 
         jButton_Productor1_Iniciar.setBackground(new java.awt.Color(153, 255, 153));
@@ -198,54 +198,75 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_Productor1_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor1_IniciarActionPerformed
+        if (!continuarProductor1) {
+            continuarProductor1 = true;
+            Productor productor1 = new Productor(b, 1, true);
+            this.productorActual1 = productor1;
+            this.productorActual1.setTextAreaConsola(jTextArea_Consola);
+            productorActual1.setTextAreaBuffer(jTextArea_Buffer);
 
-        p1.start();
-
-
+            this.productorActual1.start();
+        }
     }//GEN-LAST:event_jButton_Productor1_IniciarActionPerformed
 
     private void jButton_Productor1_DetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor1_DetenerActionPerformed
-        p1.suspend();
-
+        continuarProductor1 = false;
+        productorActual1.setContinuar(continuarProductor1);
     }//GEN-LAST:event_jButton_Productor1_DetenerActionPerformed
 
     private void jButton_Condumidor1_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Condumidor1_IniciarActionPerformed
-        continuarConsumidor1 = false;
-        c1.setContinuar(continuarConsumidor1);
-        c1.start();
 
+        if (!continuarConsumidor1) {
+            continuarConsumidor1 = true;
+            Consumidor consumidor1 = new Consumidor(b, 1, true);
+            consumidorActual1 = consumidor1;
+            consumidorActual1.setTextAreaConsola(jTextArea_Consola);
+            consumidorActual1.setTextAreaBuffer(jTextArea_Buffer);
+            consumidorActual1.start();
+        }
 
     }//GEN-LAST:event_jButton_Condumidor1_IniciarActionPerformed
 
     private void jButton_Productor2_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor2_IniciarActionPerformed
-
-        continuarProductor2 = false;
-        p2.setContinuar(continuarProductor2);
-        p2.start();
+        if (!continuarProductor2) {
+            continuarProductor2 = true;
+            Productor productor2 = new Productor(b, 2, true);
+            this.productorActual2 = productor2;
+            this.productorActual2.setTextAreaConsola(jTextArea_Consola);
+            productorActual2.setTextAreaBuffer(jTextArea_Buffer);
+            this.productorActual2.start();
+        }
     }//GEN-LAST:event_jButton_Productor2_IniciarActionPerformed
 
     private void jButton_Condumidor2_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Condumidor2_IniciarActionPerformed
-        continuarConsumidor2 = false;
-        c2.setContinuar(continuarConsumidor2);
-        c2.start();
-
-
+        if (!continuarConsumidor2) {
+            continuarConsumidor2 = true;
+            Consumidor consumidor2 = new Consumidor(b, 2, true);
+            consumidorActual2 = consumidor2;
+            consumidorActual2.setTextAreaConsola(jTextArea_Consola);
+            consumidorActual2.setTextAreaBuffer(jTextArea_Buffer);
+            consumidorActual2.start();
+        }
     }//GEN-LAST:event_jButton_Condumidor2_IniciarActionPerformed
 
     private void jButton_Condumidor1_DetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Condumidor1_DetenerActionPerformed
-        continuarConsumidor2 = false;
-        c2.setContinuar(continuarProductor1);
+        continuarConsumidor1 = false;
+        consumidorActual1.setContinuar(continuarConsumidor1);
     }//GEN-LAST:event_jButton_Condumidor1_DetenerActionPerformed
 
     private void jButton_Productor2_DetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor2_DetenerActionPerformed
-
-        continuarConsumidor2 = false;
-        c2.setContinuar(continuarProductor1);
+        continuarProductor2 = false;
+        productorActual2.setContinuar(continuarProductor2);
     }//GEN-LAST:event_jButton_Productor2_DetenerActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton_Condumidor2_DetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Condumidor2_DetenerActionPerformed
+        continuarConsumidor2 = false;
+        consumidorActual2.setContinuar(continuarConsumidor2);
+    }//GEN-LAST:event_jButton_Condumidor2_DetenerActionPerformed
 
     /**
      * @param args the command line arguments

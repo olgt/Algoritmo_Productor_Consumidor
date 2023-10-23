@@ -19,6 +19,7 @@ public class Productor extends Thread {
     private int numeroProductor;
     private boolean continuar;
     JTextArea textAreaConsola;
+    JTextArea textAreaBuffer;
 
     public Productor(Buffer b, int numeroProductor, boolean continuar) {
         this.buffer = b;
@@ -34,6 +35,7 @@ public class Productor extends Thread {
             this.textAreaConsola.setText(this.textAreaConsola.getText()
                     + "\n"
                     + "Productor " + numeroProductor + " Depositado exitosamente el caracter " + c + " del buffer");
+            this.textAreaBuffer.setText(this.buffer.getBuffer());
             try {
                 sleep((int) (Math.random() * 4000));
             } catch (InterruptedException ex) {
@@ -46,12 +48,16 @@ public class Productor extends Thread {
     public void setContinuar(boolean continuarStatus) {
         this.continuar = continuarStatus;
     }
-    
-    public boolean  getContinuar(){
+
+    public boolean getContinuar() {
         return this.continuar;
     }
 
-    public void setTextArea(JTextArea textArea) {
+    public void setTextAreaConsola(JTextArea textArea) {
         this.textAreaConsola = textArea;
+    }
+
+    public void setTextAreaBuffer(JTextArea textArea) {
+        this.textAreaBuffer = textArea;
     }
 }
