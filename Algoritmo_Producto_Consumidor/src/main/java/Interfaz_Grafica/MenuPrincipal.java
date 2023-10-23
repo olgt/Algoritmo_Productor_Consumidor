@@ -15,9 +15,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     Buffer b = new Buffer(10);
     Productor p1 = new Productor(b, 1, true);
-    Consumidor c = new Consumidor(b, 1, true);
+    Consumidor c1 = new Consumidor(b, 1, true);
     Productor p2 = new Productor(b, 2, true);
-    Productor p3 = new Productor(b, 2, true);
+    Consumidor c2 = new Consumidor(b, 2, true);
     JTextArea something = new JTextArea();
 
     boolean continuarProductor1;
@@ -31,11 +31,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        c.setTextArea(jTextArea_Consola);
+
         p1.setTextArea(jTextArea_Consola);
+        c1.setTextArea(jTextArea_Consola);
         p2.setTextArea(jTextArea_Consola);
-        p3.setTextArea(jTextArea_Consola);
+        c2.setTextArea(jTextArea_Consola);
 
     }
 
@@ -66,42 +66,71 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea_Consola = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        setMinimumSize(new java.awt.Dimension(700, 600));
+        setMinimumSize(new java.awt.Dimension(600, 480));
         setPreferredSize(new java.awt.Dimension(900, 500));
-
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_Condumidor1_Detener.setBackground(new java.awt.Color(255, 153, 153));
         jButton_Condumidor1_Detener.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Condumidor1_Detener.setText("Detener");
+        jButton_Condumidor1_Detener.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Condumidor1_DetenerActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Condumidor1_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, 100, 30));
 
         jButton_Productor1_Detener.setBackground(new java.awt.Color(255, 153, 153));
         jButton_Productor1_Detener.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Productor1_Detener.setText("Detener");
+        jButton_Productor1_Detener.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Productor1_DetenerActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Productor1_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 100, 30));
 
         jButton_Productor2_Iniciar.setBackground(new java.awt.Color(153, 255, 153));
         jButton_Productor2_Iniciar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Productor2_Iniciar.setText("Iniciar");
+        jButton_Productor2_Iniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Productor2_IniciarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Productor2_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 100, 30));
 
         jButton_Condumidor1_Iniciar.setBackground(new java.awt.Color(153, 255, 153));
         jButton_Condumidor1_Iniciar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Condumidor1_Iniciar.setText("Iniciar");
+        jButton_Condumidor1_Iniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Condumidor1_IniciarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Condumidor1_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 70, 100, 30));
 
         jButton_Productor2_Detener.setBackground(new java.awt.Color(255, 153, 153));
         jButton_Productor2_Detener.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Productor2_Detener.setText("Detener");
+        jButton_Productor2_Detener.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Productor2_DetenerActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Productor2_Detener, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 100, 30));
 
         jButton_Condumidor2_Iniciar.setBackground(new java.awt.Color(153, 255, 153));
         jButton_Condumidor2_Iniciar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton_Condumidor2_Iniciar.setText("Iniciar");
+        jButton_Condumidor2_Iniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Condumidor2_IniciarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Condumidor2_Iniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 340, 100, 30));
 
         jButton_Condumidor2_Detener.setBackground(new java.awt.Color(255, 153, 153));
@@ -124,9 +153,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jTextArea_Buffer.setRows(5);
         jScrollPane1.setViewportView(jTextArea_Buffer);
 
-
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 270, -1));
-
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Productor 1");
@@ -134,9 +161,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Consumidor 1");
-
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, -1, -1));
-
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Productor 2");
@@ -144,37 +169,83 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Consumidor 2");
-
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 310, -1, -1));
-
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Buffer");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 40, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Consola");
-
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 50, -1));
-
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 80, -1));
 
         jTextArea_Consola.setBackground(new java.awt.Color(204, 204, 255));
         jTextArea_Consola.setColumns(20);
         jTextArea_Consola.setRows(5);
         jScrollPane2.setViewportView(jTextArea_Consola);
 
-
-
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 490, 160));
 
+        jButton1.setText("SALIR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 180, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_Productor1_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor1_IniciarActionPerformed
-        test();
+
+        p1.start();
+
 
     }//GEN-LAST:event_jButton_Productor1_IniciarActionPerformed
+
+    private void jButton_Productor1_DetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor1_DetenerActionPerformed
+        p1.suspend();
+
+    }//GEN-LAST:event_jButton_Productor1_DetenerActionPerformed
+
+    private void jButton_Condumidor1_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Condumidor1_IniciarActionPerformed
+        continuarConsumidor1 = false;
+        c1.setContinuar(continuarConsumidor1);
+        c1.start();
+
+
+    }//GEN-LAST:event_jButton_Condumidor1_IniciarActionPerformed
+
+    private void jButton_Productor2_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor2_IniciarActionPerformed
+
+        continuarProductor2 = false;
+        p2.setContinuar(continuarProductor2);
+        p2.start();
+    }//GEN-LAST:event_jButton_Productor2_IniciarActionPerformed
+
+    private void jButton_Condumidor2_IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Condumidor2_IniciarActionPerformed
+        continuarConsumidor2 = false;
+        c2.setContinuar(continuarConsumidor2);
+        c2.start();
+
+
+    }//GEN-LAST:event_jButton_Condumidor2_IniciarActionPerformed
+
+    private void jButton_Condumidor1_DetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Condumidor1_DetenerActionPerformed
+        continuarConsumidor2 = false;
+        c2.setContinuar(continuarProductor1);
+    }//GEN-LAST:event_jButton_Condumidor1_DetenerActionPerformed
+
+    private void jButton_Productor2_DetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Productor2_DetenerActionPerformed
+
+        continuarConsumidor2 = false;
+        c2.setContinuar(continuarProductor1);
+    }//GEN-LAST:event_jButton_Productor2_DetenerActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,14 +282,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
 
-    public void test() {
-        p1.start();
-        c.start();
-        p2.start();
-        p3.start();
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_Condumidor1_Detener;
     private javax.swing.JButton jButton_Condumidor1_Iniciar;
     private javax.swing.JButton jButton_Condumidor2_Detener;

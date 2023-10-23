@@ -46,6 +46,10 @@ public class Productor extends Thread {
     public void setContinuar(boolean continuarStatus) {
         this.continuar = continuarStatus;
     }
+    
+    public boolean  getContinuar(){
+        return this.continuar;
+    }
 
     public void setTextArea(JTextArea textArea) {
         this.textAreaConsola = textArea;
