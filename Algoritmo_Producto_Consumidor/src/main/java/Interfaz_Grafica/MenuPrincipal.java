@@ -124,8 +124,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jTextArea_Buffer.setRows(5);
         jScrollPane1.setViewportView(jTextArea_Buffer);
 
+<<<<<<< Updated upstream
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 270, -1));
+=======
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 270, -1));
+>>>>>>> Stashed changes
 
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -150,6 +154,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Buffer");
+<<<<<<< Updated upstream
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 40, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -157,16 +162,38 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 50, -1));
 
+=======
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 90, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setText("Consola");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 80, -1));
+>>>>>>> Stashed changes
 
         jTextArea_Consola.setBackground(new java.awt.Color(204, 204, 255));
         jTextArea_Consola.setColumns(20);
         jTextArea_Consola.setRows(5);
         jScrollPane2.setViewportView(jTextArea_Consola);
 
+<<<<<<< Updated upstream
 
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 490, 160));
 
+=======
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 490, 160));
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 51));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("SALIR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 80, 30));
+>>>>>>> Stashed changes
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

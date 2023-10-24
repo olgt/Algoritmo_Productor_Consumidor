@@ -171,9 +171,13 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
 
           <AbsoluteConstraints x="300" y="100" width="270" height="-1"/>
 
+=======
+          <AbsoluteConstraints x="310" y="80" width="270" height="-1"/>
+>>>>>>> Stashed changes
         </Constraint>
       </Constraints>
 
@@ -255,7 +259,11 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
           <AbsoluteConstraints x="400" y="80" width="40" height="-1"/>
+=======
+          <AbsoluteConstraints x="410" y="60" width="90" height="-1"/>
+>>>>>>> Stashed changes
         </Constraint>
       </Constraints>
     </Component>
@@ -268,9 +276,13 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
 
           <AbsoluteConstraints x="400" y="220" width="50" height="-1"/>
 
+=======
+          <AbsoluteConstraints x="410" y="200" width="80" height="-1"/>
+>>>>>>> Stashed changes
         </Constraint>
       </Constraints>
     </Component>
@@ -280,9 +292,13 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< Updated upstream
 
           <AbsoluteConstraints x="180" y="250" width="490" height="160"/>
 
+=======
+          <AbsoluteConstraints x="190" y="230" width="490" height="160"/>
+>>>>>>> Stashed changes
         </Constraint>
       </Constraints>
 
@@ -299,5 +315,30 @@
         </Component>
       </SubComponents>
     </Container>
+<<<<<<< Updated upstream
+=======
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="SALIR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="400" y="420" width="80" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+>>>>>>> Stashed changes
   </SubComponents>
 </Form>
